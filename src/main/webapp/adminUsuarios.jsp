@@ -1,17 +1,23 @@
-<%-- 
-    Document   : adminUsuarios
-    Created on : 27/03/2026, 6:23:43 p. m.
-    Author     : daavv
---%>
+<%@ include file="lib/header.jsp" %>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<h2>Administraci�n de Usuarios</h2>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Tipo</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Ejemplo</td>
+        <td>correo@mail.com</td>
+        <td>Operador</td>
+    </tr>
+</table>
+
+<br>
+<a href="registroUsuarios.jsp">Registrar nuevo usuario</a>
+
+<%@ include file="lib/footer.jsp" %>

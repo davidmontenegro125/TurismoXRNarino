@@ -62,10 +62,6 @@ footer {
     transition: all 0.3s ease;
 }
 
-.container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
 
 @keyframes slideIn {
     0% { opacity: 0; transform: translateY(10px); }
@@ -78,6 +74,7 @@ h2 {
     font-weight: 700;
     font-size: 2rem;
     margin-bottom: 1rem;
+    margin-top: 1rem;
     animation: fadeInTitle 1.2s ease;
 }
 
@@ -194,12 +191,41 @@ p {
 
 p a {
     font-weight: bold;
-    color: #004d99;
+    color: #333;
     transition: color 0.3s ease;
 }
 
 p a:hover {
     color: #ff6600;
     text-decoration: underline;
+}
+
+.card-xr {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Imagen más estética */
+.card-xr img {
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-xr:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+    font-weight: bold;
+    color: #004d99;
+}
+
+.card-text {
+    color: #555;
+    font-size: 0.95rem;
 }
 
