@@ -1,65 +1,17 @@
 package Modelo;
 
+public class Usuario extends Persona {
 
-public class Usuario {
-    int id;
-    String nombre;
-    String correo;
-    String contrasena;
-    
-    //Constructores--------------------------------------------------------------------
-    public Usuario(){
-        
-    }
-    
-    public Usuario(int id, String nombre, String correo, String contrasena) {
-        this.id = id;
-        this.nombre = nombre;
-        this.correo = correo;
-        this.contrasena = contrasena;
+    public Usuario() {
     }
 
-    //getters y setters-----------------------------------------------------------------
-    
-    public int getId() {
-        return id;
+    public Usuario(int id, String nombre, String correo) {
+        setId(id);
+        setNombre(nombre);
+        setCorreo(correo);
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String mostrarDatos() {
+        return getId() + " - " + getNombre() + " - " + getCorreo();
     }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
-    public String getContrasena() {
-        return contrasena;
-    }
-
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
-    }
-    
-    //Métodos----------------------------------------------------------------------
-    public boolean iniciarSesion(){
-        return true;
-    }
-    
-    public void cerrarSesion(){
-        System.out.println("Sesión cerrada.");
-    }
-    
 }

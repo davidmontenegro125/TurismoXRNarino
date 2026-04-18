@@ -1,23 +1,54 @@
-<%@ include file="lib/header.jsp" %>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Modelo.Usuario"%>
+<%@page import="Servlets.ServletUsuarios"%>
 
-<h2>Administración de Usuarios</h2>
+<jsp:include page="lib/header.jsp" />
 
-<table border="1">
-    <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Correo</th>
-        <th>Tipo</th>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>Ejemplo</td>
-        <td>correo@mail.com</td>
-        <td>Operador</td>
-    </tr>
-</table>
+<div class="containerGeneral">
+    <h2>Administrar Usuarios</h2>
 
-<br>
-<a href="registroUsuarios.jsp">Registrar nuevo usuario</a>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+            </tr>
+        </thead>
 
-<%@ include file="lib/footer.jsp" %>
+        <tbody>
+        <%
+            ArrayList<Usuario> lista = ServletUsuarios.listaUsuarios;
+
+            if (lista != null && !lista.isEmpty()) {
+                for (Usuario u : lista) {
+        %>
+            <tr>
+                <td><%= u.getId() %></td>
+                <td><%= u.getNombre() %></td>
+                <td><%= u.getCorreo() %></td>
+            </tr>
+        <%
+                }
+            } else {
+        %>
+            <tr>
+                <td colspan="3" class="text-center">
+                    No hay usuarios registrados
+                </td>
+            </tr>
+        <%
+            }
+        %>
+        </tbody>
+    </table>
+
+    <div style="text-align:center; margin-top:20px;">
+        <a href="registroUsuarios.jsp" class="btn btn-primary">
+            Registrar nuevo usuario
+        </a>
+    </div>
+
+</div>
+
+<jsp:include page="lib/footer.jsp" />

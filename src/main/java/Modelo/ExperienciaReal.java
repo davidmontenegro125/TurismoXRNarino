@@ -1,32 +1,39 @@
 package Modelo;
 
-public class ExperienciaReal extends ExperienciaTuristica{
-    
+public class ExperienciaReal extends ExperienciaTuristica {
+
+    private int cupos;
     private String tipoTransporte;
-    
-    
-    //Contructores---------------------------------------------------------------
-    public ExperienciaReal(){
-        
+
+    public ExperienciaReal() {
     }
 
-    public ExperienciaReal(int id, String nombre, String descripcion, String destino, String tipoTurismo, int disponiblidad) {
-        super(id, nombre, descripcion, destino, tipoTurismo, disponiblidad);
+    public ExperienciaReal(int cupos, String tipoTransporte, int id, String nombre, String destino, double precio) {
+        super(id, nombre, destino, precio);
+        this.cupos = cupos;
         this.tipoTransporte = tipoTransporte;
     }
-    
-    @Override
-    public String mostrarDetalle() {
-        return "Tipo de turismo: Real | Destino: "+destino+" | Tipo de transporte: "+tipoTransporte;
+
+
+    public int getCupos() {
+        return cupos;
     }
-    
-    
-    //Métodos---------------------------------------------------------------------
-    public String getTipoTransporte(){
+
+    public void setCupos(int cupos) {
+        this.cupos = cupos;
+    }
+
+    public String getTipoTransporte() {
         return tipoTransporte;
     }
-    
-    public void setTipoTransporte(String tipoTransporte){
+
+    public void setTipoTransporte(String tipoTransporte) {
         this.tipoTransporte = tipoTransporte;
+    }
+    
+
+    public String mostrarDatos() {
+        return getId() + " - " + getNombre() + " - " + getDestino() +
+               " - "+tipoTransporte+" - $" + getPrecio() + " - Cupos: " + cupos;
     }
 }

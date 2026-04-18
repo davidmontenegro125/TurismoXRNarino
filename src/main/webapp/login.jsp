@@ -1,14 +1,31 @@
-<%@include file = "./lib/header.jsp" %>
+<jsp:include page="lib/header.jsp" />
 
-<h2>Iniciar sesión</h2>
+<div class="containerGeneral">
+    <h2>Iniciar Sesión</h2>
 
-<div class ="container">
-    <form>
-        Correo: <input type="text"><br><br>
-        Contraseña: <input type="password"><br><br>
+    <form action="ServletUsuarios" method="post">
+        <input type="hidden" name="accion" value="login">
 
-        <input type="submit" value="Ingresar">
+        <div class="form-group">
+            <label>Correo</label>
+            <input type="email" name="correo" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label>Contraseña</label>
+            <input type="password" name="password" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Ingresar
+        </button>
+        
+
     </form>
+
+    <div style="text-align:center; margin-top:15px;">
+        <a href="registroUsuarios.jsp">¿No tienes cuenta? Regístrate</a>
+    </div>
 </div>
 
-<%@include file = "./lib/footer.jsp" %>
+<jsp:include page="lib/footer.jsp" />

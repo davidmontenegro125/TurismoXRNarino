@@ -1,30 +1,27 @@
 package Modelo;
 
-public class ExperienciaVirtual extends ExperienciaTuristica{
-    
-    private String tecnologiaXR;
-    
-    //Constructores---------------------------------------------------------------
-    public ExperienciaVirtual(){
-        
+public class ExperienciaVirtual extends ExperienciaTuristica {
+
+    private String tipoXR;
+
+    public ExperienciaVirtual() {
     }
 
-    public ExperienciaVirtual(int id, String nombre, String descripcion, String destino, String tipoTurismo, int disponiblidad) {
-        super(id, nombre, descripcion, destino, tipoTurismo, disponiblidad);
-        this.tecnologiaXR = tecnologiaXR;
+    public ExperienciaVirtual(String tipoXR, int id, String nombre, String destino, double precio) {
+        super(id, nombre, destino, precio);
+        this.tipoXR = tipoXR;
     }
-    
-    @Override
-    public String mostrarDetalle() {
-        return "Tipo de turismo: Virtual | Destino: "+destino+" | Tipo de experiencia: "+tecnologiaXR;
+
+    public String getTipoXR() {
+        return tipoXR;
     }
-    
-    //Métodos---------------------------------------------------------------------
-    public String getTecnologiaXR(){
-        return tecnologiaXR;
+
+    public void setTipoXR(String tipoXR) {
+        this.tipoXR = tipoXR;
     }
-    
-    public void setTecnologiaXR(String tecnologiaXR){
-        this.tecnologiaXR = tecnologiaXR;
+
+    public String mostrarDatos() {
+        return getId() + " - " + getNombre() + " - " + getDestino() +
+               " - $" + getPrecio() + " - XR: " + tipoXR;
     }
 }

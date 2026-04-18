@@ -5,48 +5,61 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-        <link href="./styles/styles.css" rel="stylesheet" type="text/css" />
+        <meta charset="UTF-8">
+        <title>TurismoXR Nariño</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="./styles/styles.css" rel="stylesheet" type="text/css">
     </head>
 
-
     <body>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #0076c7, #003d7a);">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+                <a class="navbar-brand" href="index.jsp">
+                    🌍 TurismoXR
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav me-auto">
+
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/index.jsp">Inicio</a>
+                            <a class="nav-link" href="index.jsp">Inicio</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Administración
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/registroProductos.jsp">Registrar Experiencias</a></li>
-                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/registroUsuarios.jsp">Registrar Usuarios</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/adminProductos.jsp">Administrar Experiencias</a></li>
-                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/adminUsuarios.jsp">Administrar Usuarios</a></li>
-                            </ul>
-                        </li>
+
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/catalogoProductos.jsp">Ver catálogo</a>
+                            <a class="nav-link" href="ServletExperiencias">Catálogo</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="registroExperiencias.jsp">Registrar</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="ServletExperiencias?vista=admin">Administrar experiencias</a>                            
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.jsp">Login</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="adminUsuarios.jsp">Usuarios</a>
+                        </li>
+
+
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
                 </div>
+
             </div>
         </nav>

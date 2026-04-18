@@ -1,21 +1,40 @@
-<%@include file = "./lib/header.jsp" %>
+<jsp:include page="lib/header.jsp" />
 
-<h2>Registro de Usuario</h2>
+<div class="containerGeneral">
+    <h2>Registrar Usuario</h2>
 
-<form action="ServletUsuarios" method="post">
+    <form action="ServletUsuarios" method="post">
+        <input type="hidden" name="accion" value="registrar">
 
-    Nombre: <input type="text" name="nombre"><br><br>
-    Correo: <input type="text" name="correo"><br><br>
-    Contraseña: <input type="password" name="password"><br><br>
-    Teléfono: <input type="text" name="telefono"><br><br>
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" name="nombre" class="form-control" required>
+        </div>
 
-    Tipo:
-    <select name="tipo">
-        <option value="operador">Operador</option>
-        <option value="admin">Administrador</option>
-    </select><br><br>
+        <div class="form-group">
+            <label>Correo</label>
+            <input type="email" name="correo" class="form-control" required>
+        </div>
 
-    <input type="submit" value="Registrar">
-</form>
+        <div class="form-group">
+            <label>Contraseña</label>
+            <input type="password" name="password" class="form-control" required>
+        </div>
 
-<%@include file = "./lib/footer.jsp" %>
+        <div class="form-group">
+            <label>Rol</label>
+            <select name="rol" class="form-control" required>
+                <option value="">Seleccione</option>
+                <option value="admin">Administrador</option>
+                <option value="operador">Operador</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Registrar
+        </button>
+
+    </form>
+</div>
+
+<jsp:include page="lib/footer.jsp" />
