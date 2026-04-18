@@ -14,7 +14,7 @@
 
     <div style="text-align:center; margin-top:20px;">
 
-        <a href="catalogoExperiencias.jsp" class="btn btn-primary">
+        <a href="ServletExperiencias" class="btn btn-primary">
             Ver Catálogo
         </a>
 
